@@ -9,9 +9,11 @@ $(document).ready(function(){
 			$("#contact").addClass("active");
 			break;
 		case "All Products":
-			$("#list_products").addClass("active");
+			$("#listProducts").addClass("active");
 			break;
 		default:
-			$("#home").addClass("active");
+			$("#listProducts").addClass("active");
+			$("#a_"+menu).addClass("active");
+			break;
 	}
 });

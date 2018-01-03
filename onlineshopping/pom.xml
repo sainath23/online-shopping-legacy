@@ -12,6 +12,13 @@
 		<spring.version>5.0.2.RELEASE</spring.version>
 	</properties>
 	<dependencies>
+		<!-- Linking Backend -->
+		<dependency>
+			<groupId>com.doitgeek</groupId>
+			<artifactId>shoppingbackend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<!-- Java EE API -->
 		<dependency>
 			<groupId>javax</groupId>
