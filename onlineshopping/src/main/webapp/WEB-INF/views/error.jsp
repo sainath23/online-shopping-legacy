@@ -4,8 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <spring:url var="css" value="/resources/css" />
-<spring:url var="js" value="/resources/js" />
-<spring:url var="images" value="/resources/images" />
+
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
@@ -32,9 +31,6 @@
 <!-- Bootstrap Flatly Theme CSS -->
 <link href="${css}/bootstrap-flatly-theme.css" rel="stylesheet">
 
-<!-- Bootstrap DataTables CSS -->
-<link href="${css}/dataTables.bootstrap.min.css" rel="stylesheet">
-
 <!-- Custom CSS -->
 <link href="${css}/shop-homepage.css" rel="stylesheet">
 
@@ -52,48 +48,32 @@
 	<div class="wrapper">
 
 		<!-- Navigation -->
-		<%@ include file="./shared/navbar.jsp"%>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<a class="navbar-brand" href="${contextRoot}/home">Home</a>
+				</div>
+			</div>
+		</nav>
 
 		<!-- Page Content -->
 		<div class="content">
-			<c:if test="${userClickHome == true}">
-				<%@ include file="home.jsp"%>
-			</c:if>
-
-			<c:if test="${userClickAbout == true}">
-				<%@include file="about.jsp"%>
-			</c:if>
-
-			<c:if test="${userClickContact == true}">
-				<%@include file="contact.jsp"%>
-			</c:if>
-
-			<c:if
-				test="${userClickAllProducts == true or userClickCategoryProducts == true}">
-				<%@include file="listProducts.jsp"%>
-			</c:if>
-			<c:if test="${userClickShowProduct == true}">
-				<%@ include file="singleProduct.jsp"%>
-			</c:if>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="jumbotron">
+							<h1>${errorTitle}</h1>
+							<hr>
+							<blockquote>${errorDescription}</blockquote>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<%@ include file="./shared/footer.jsp"%>
 		<!-- /.container -->
-
-		<!-- jQuery -->
-		<script src="${js}/jquery.js"></script>
-
-		<!-- Bootstrap Core JavaScript -->
-		<script src="${js}/bootstrap.min.js"></script>
-
-		<!-- Jquery DataTables -->
-		<script src="${js}/jquery.dataTables.min.js"></script>
-
-		<!-- Bootstrap DataTables -->
-		<script src="${js}/dataTables.bootstrap.min.js"></script>
-
-		<!-- Shopping jsp -->
-		<script src="${js}/shopping.js"></script>
 
 	</div>
 </body>
